@@ -11,7 +11,7 @@ long number = Convert.ToInt64(Console.ReadLine());
 
 bool Palindrom_check(long num)
 {
-    long remains = number;
+    long remains = num;
     int i = 1; long k = 1;
     while (remains > 10)
     {
@@ -20,14 +20,14 @@ bool Palindrom_check(long num)
         i++;
     }
 
-    long number1 = 1; long number2 = 1; long number3 = number * 10;
+    long number1 = 1; long number2 = 1; long number3 = num * 10;
     int j = 0;
     while (j < i / 2)
     {
         number3 = number3 / 10;
         number1 = number3 % 10; // остаток с конца числа
 
-        number2 = (number / (k)) % 10; // остаток с начала  числа
+        number2 = (num / (k)) % 10; // остаток с начала  числа
         k = k / 10;
         if (number1 != number2) return false;
         j++;
