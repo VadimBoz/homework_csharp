@@ -11,7 +11,7 @@ int number = Convert.ToInt32(Console.ReadLine());
 int TherdDigit(int n) //поиск третьей цифры числа-----------------------------------
 {
     int i = 1;
-    while (n >= 999)
+    while (n > 999)
     {
         n = n / 10;
         i++;
@@ -22,54 +22,10 @@ int TherdDigit(int n) //поиск третьей цифры числа---------
     int n3 = n % 10;
     return n3;
     }
+ 
 }//--------------------------------------------------------
 
 
 int therdDigit = TherdDigit(number);
 if (therdDigit==-1)  Console.WriteLine("Третьей цифры нет");
 else Console.WriteLine($"Третья цифра числа {number} равна {therdDigit}");
-
-
-
-//-------------- первоночальный вариант не оптимизированный 
-// int DigitCount(int n)//определение числа разрядов заданного числа
-// {
-//     int depth = 1;
-//     int remains = n / 10;
-//     if (remains >= 1)
-//     {
-//         while (remains >= 1)
-//         {
-//             remains = remains / 10;
-//             depth = depth + 1;
-//         }
-//     }
-//     return depth;
-// }
-
-// int Digits_0(int depthLocal) //формирует чило 10... с заданным числом зазрядов
-// {
-//     int res = 1;
-//     for (int i = 1; i <= depthLocal; i++) res = res * 10;
-//     return res;
-// }
-
-// int TherdDigit(int n) //поиск третьей цифры числа
-// {
-//     n = (n / (Digits_0(DigitCount(n) - 3))) % 10;
-//     return n;
-// }
-
-// //------------------------------------------------------------------------------------
-// Console.WriteLine("Ведите число");
-// int number = Convert.ToInt32(Console.ReadLine());
-// int digitCount = DigitCount(number);
-// if (digitCount < 3)
-// {
-//     Console.WriteLine("Третьей цифры нет");
-// }
-// else
-// {
-//     int therdDigit = TherdDigit(number);
-//     Console.WriteLine($"Третья цифра числа {number} равна {therdDigit}");
-// }
