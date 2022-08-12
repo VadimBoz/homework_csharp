@@ -9,7 +9,7 @@
 Console.WriteLine("Введите число: ");
 long number = Convert.ToInt64(Console.ReadLine());
 
-bool Palindrom_check(long num)
+bool PalindromCheck(long num)
 {
     long remains = num;
     int i = 1; 
@@ -39,5 +39,5 @@ bool Palindrom_check(long num)
   return true;
 }
 
-if (Palindrom_check(number)) Console.WriteLine($"число {number} является палиндромом");
+if (PalindromCheck(number)) Console.WriteLine($"число {number} является палиндромом");
 else  Console.WriteLine($"число {number} не является палиндромом");
