@@ -10,12 +10,10 @@ int number = Convert.ToInt32(Console.ReadLine());
 
 int SumDigits(int num)
 {
-    int n1 = num / 10;
     int res = num % 10;
-    for (int i = 0; n1 >= 1; i++)
+    for (int n1 = num / 10; n1 >= 1; n1 /= 10)
     {
-        res = res + n1 % 10;
-        n1 = n1 / 10;
+        res += n1 % 10;
     }
     return res;
 }
