@@ -4,16 +4,17 @@
 // 1, 2, 5, 7, 19, 6, 1, 33 -> [1, 2, 5, 7, 19, 6, 1, 33]
 
 
-int[] res = CreatureArray(8, 0, 100);
+int[] res = CreatureArray(8, 0, 99);
 PrintArray(res);
 
 //------------------------ methods ------------------------------
 int[] CreatureArray(int amount, int min, int max)
 {
+    Random rand = new Random();
     int[] array = new int[amount];
     for (int i = 0; i < amount; i++)
     {
-        array[i] = new Random().Next(min, max);
+        array[i] = rand.Next(min, max+1);
     }
     return array;
 }
