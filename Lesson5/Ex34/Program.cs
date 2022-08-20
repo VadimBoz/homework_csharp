@@ -6,7 +6,7 @@
 
 
 
-int[] CreatureRndArray(int amount, int min, int max)
+int[] CreatureRndArray(int amount, int min, int max)  // создание массива из заданного колва элементов
 {
     Random rand = new Random();
     int[] array = new int[amount];
@@ -15,10 +15,9 @@ int[] CreatureRndArray(int amount, int min, int max)
         array[i] = rand.Next(min, max + 1);
     }
     return array;
-}
+} //-------------------------------------------------------------------------------------------------
 
-
-int FindParityDigits(int[] array)
+int FindParityDigits(int[] array) // поиск четных чисел ----------------------------------------
 {
     int count = 0;
     for (int i = 0; i < array.Length; i++)
@@ -27,9 +26,9 @@ int FindParityDigits(int[] array)
 
     }
     return count;
-}
+} //-------------------------------------------------------------------------------------------------
 
-void PrintArray(int[] array)
+void PrintArray(int[] array)  // вывод массива в консоль --------------------------------
 {
     Console.Write("[");
     for (int i = 0; i < array.Length - 1; i++)
@@ -37,8 +36,7 @@ void PrintArray(int[] array)
         Console.Write($"{array[i]}, ");
     }
     Console.Write($"{array[array.Length - 1]}]");
-}
-
+} //-------------------------------------------------------------------------------------------------
 
 
 int[] arr = CreatureRndArray(4, 100, 999);

@@ -6,7 +6,7 @@
 // [-4, -6, 89, 6] -> 0
 
 
-int[] CreatureRndArray(int amount, int min, int max)
+int[] CreatureRndArray(int amount, int min, int max) // создание массива из заданного колва чисел --------
 {
     Random rand = new Random();
     int[] array = new int[amount];
@@ -15,18 +15,18 @@ int[] CreatureRndArray(int amount, int min, int max)
         array[i] = rand.Next(min, max + 1);
     }
     return array;
-}
+} //---------------------------------------------------------------------------------------------------
 
 
-int SumDigits(int[] array)
+int SumDigits(int[] array) //сумма элементов, стоящих на нечётных позициях (индексах)---------------
 {
     int sum = 0;
     for (int i = 1; i < array.Length; i += 2) sum += array[i];
     return sum;
-}
+} //---------------------------------------------------------------------------------------------------
 
 
-void PrintArray(int[] array)
+void PrintArray(int[] array) //вывод массива  консоль ----------------------------------------------
 {
     Console.Write("[");
     for (int i = 0; i < array.Length - 1; i++)
@@ -34,7 +34,7 @@ void PrintArray(int[] array)
         Console.Write($"{array[i]}, ");
     }
     Console.Write($"{array[array.Length - 1]}]");
-}
+} //---------------------------------------------------------------------------------------------------
 
 
 
