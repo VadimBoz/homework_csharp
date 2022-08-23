@@ -8,9 +8,13 @@ Console.WriteLine($"Ведите 4 коэффициента уравнений (
 double[] coefficient = InputNumbers(4);
 PrintArray(coefficient);
 double[] res = PointIntersection(coefficient[0], coefficient[1], coefficient[2], coefficient[3]);
-
-Console.WriteLine($"Точка пересечения прямых:");
-PrintArray(res);
+if (res[0] == -111.099 && res[1] == 111.099)
+    Console.WriteLine($"Прямые не пересекаются");
+else
+{
+    Console.WriteLine($"Точка пересечения прямых:");
+    PrintArray(res);
+}
 
 
 double[] InputNumbers(int count) //чтение вводимых чисел ------------------------------------------
@@ -26,12 +30,14 @@ double[] InputNumbers(int count) //чтение вводимых чисел ----
 
 double[] PointIntersection(double b1, double k1, double b2, double k2) //точка пересечения 2х прямых -----------
 {
-   
+
     double[] point = new double[2];
-    //  if (k1==k2) 
-    // {
-    //     return point = [-1,  2];
-    // }
+    if (k1 == k2)
+    {
+        point[0] = -111.099;
+        point[1] = 111.099;
+        return point;
+    }
     point[0] = (b2 - b1) / (k1 - k2);
     point[1] = k1 * point[0] + b1;
     return point;
@@ -43,7 +49,7 @@ void PrintArray(double[] array)  //вывод массива в консоль -
     Console.Write("[");
     for (int i = 0; i < array.Length - 1; i++)
     {
-        Console.Write("{0:N1};  ",array[i]);
+        Console.Write("{0:N1};  ", array[i]);
     }
     Console.Write("{0:N1}", array[array.Length - 1]);
     Console.WriteLine("]");
