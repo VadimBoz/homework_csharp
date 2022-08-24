@@ -10,14 +10,12 @@ int count = Convert.ToInt32(Console.ReadLine());
 int[] num = InputNumbers(count);
 PrintArray(num);
 int countPozitive=PozitiveCount(num);
-Console.WriteLine($"Количество положительный чисел составляет: {countPozitive}");
-
-
+Console.WriteLine($"Количество положительных чисел составляет: {countPozitive}");
 
 
 int[] InputNumbers(int count) //чтение вводимых чисел ------------------------------------------
 { 
-    Console.WriteLine($"Ведите {count} числа через [ENTER]");
+    Console.WriteLine($"Ведите {count} целых числа через [ENTER]");
     int[] input = new int[count];
     for (int i = 0; i < count; i++)
     {
@@ -32,9 +30,9 @@ void PrintArray(int[] array)  //вывод массива в консоль ----
     Console.Write("[");
     for (int i = 0; i < array.Length - 1; i++)
     {
-        Console.Write($"{array[i]} ");
+        Console.Write($"{array[i]}, ");
     }
-    Console.Write($" {array[array.Length - 1]}");
+    Console.Write($"{array[array.Length - 1]}");
     Console.WriteLine("]");
 } //-------------------------------------------------------------------------------------------------
 
