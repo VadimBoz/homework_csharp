@@ -10,7 +10,7 @@
 int[,] matrix = CreatureRndArray(3, 4, 0, 10);
 PrintMatrix(matrix);
 double[] averageColoumn = AverageColoumn(matrix);
-Console.WriteLine("Среднее арифметическое каждого столбца:");
+Console.Write("Среднее арифметическое каждого столбца:  ");
 PrintArray(averageColoumn);
 
 

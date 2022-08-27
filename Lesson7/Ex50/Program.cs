@@ -20,19 +20,22 @@ Console.WriteLine(res);
 
 string IfElementExists(int[] index, int[,] array) // проверка, есть ли элемент в массиве---------
 {
-    int col = array.GetLength(0);
-    int row = array.GetLength(1);
-    if (index[0] >= col || index[1] >= row) return "Такого элемента не существует";
+    int row = array.GetLength(0);
+    int col = array.GetLength(1);
+    if (index[0] >= row || index[1] >= col
+    || index[0] < 0 || index[1] < 0) return "Такого элемента не существует";
     else
     {
-        string str = $"Элемент массива c индексами ({index[0] + 1}, {index[1] + 1}): ";
-        return str + Convert.ToString(array[index[0], index[1]]);
+        string str = $"Элемент массива c индексами [{index[0] + 1}, {index[1] + 1}]: ";
+        return str + Convert.ToString(array[ index[0], index[1] ]);
+    
     }
 } //------------------------------------------------------------------------------------------------
 
 
 int[] IndexInput(int count)  //  чтение с консоли индексов элемента массива
 {
+    Console.WriteLine();
     int[] res = new int[count];
     for (int i = 0; i < count; i++)
     {
