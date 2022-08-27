@@ -9,26 +9,25 @@
 // 8 4 2 4
 // 1, 7->такого элемента в массиве нет
 
-
-int[,] array = CreatureRndArray(6, 4, -10, 10);
+Console.Clear();
+int[,] array = CreatureRndArray(3, 4, -10, 10);
 PrintArray(array);
 int[] index = IndexInput(2);
 string res = IfElementExists(index, array);
 Console.WriteLine(res);
 
 
-
 string IfElementExists(int[] index, int[,] array) // проверка, есть ли элемент в массиве---------
 {
     int row = array.GetLength(0);
     int col = array.GetLength(1);
+    string str = $"Элемент массива c индексами [{index[0] + 1}, {index[1] + 1}]: ";
     if (index[0] >= row || index[1] >= col
-    || index[0] < 0 || index[1] < 0) return "Такого элемента не существует";
+        || index[0] < 0 || index[1] < 0)
+        return str + " не существует";
     else
     {
-        string str = $"Элемент массива c индексами [{index[0] + 1}, {index[1] + 1}]: ";
-        return str + Convert.ToString(array[ index[0], index[1] ]);
-    
+        return str + Convert.ToString(array[index[0], index[1]]);
     }
 } //------------------------------------------------------------------------------------------------
 

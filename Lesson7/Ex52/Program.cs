@@ -70,8 +70,8 @@ void PrintMatrix(int[,] array)  // вывод двумерного массив�
         Console.Write("|");
         for (int j = 0; j < col; j++)
         {
-            Console.Write("{0,5}", array[i, j]);
+            Console.Write("{0,4}", array[i, j]);
         }
-        Console.WriteLine("  |");
+        Console.WriteLine("   |");
     }
 } //-------------------------------------------------------------------------------------------------
