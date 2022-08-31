@@ -9,7 +9,7 @@
 // Программа считает сумму элементов в каждой строке и выдаёт номер строки 
 // с наименьшей суммой элементов: 1 строка
 
-int[,] array = CreatureRndArray(6, 3, 0, 5);
+int[,] array = CreatureRndArray(6, 3, -5, 5);
 Console.WriteLine("Исходный массив");
 PrintMatrix(array);
 Console.WriteLine();
@@ -22,10 +22,11 @@ int FindRow(int[,] array) //поиск строки с наименьшей су
     int row = array.GetLength(0);
     int col = array.GetLength(1);
     int res = 0;
-    int minSum = 99999;
+    int minSum = Int32.MaxValue;
     for (int i = 0; i < row; i++)
     {
         int sum = 0;
+        
         for (int j = 0; j < col; j++)
         {
             sum += array[i, j];

@@ -16,20 +16,22 @@ Console.WriteLine();
 int[,] array2 = CreatureRndArray(3, 2, 0, 5);
 Console.WriteLine("Исходный массив 2");
 PrintMatrix(array2);
+Console.WriteLine();
 
-
-// int[,] array1 = new int[2, 2] { { 2, 4 }, { 3, 2 } };
+// int[,] array1 = new int[2, 2] { { 2, 4 }, { 3, 2 } }; // проверка решения
 // int[,] array2 = new int[2, 2] { { 3, 4 }, { 3, 3 } };
 
 
-Console.WriteLine();
-if (CheckMatrix(array1,array2))
+if (CheckMatrix(array1, array2))
 {
-int[,] matrixMultiplay = MatrixMultiplay(array1, array2);
-Console.WriteLine("Результат умножения матриц");
-PrintMatrix(matrixMultiplay);
+    int[,] matrixMultiplay = MatrixMultiplay(array1, array2);
+    Console.WriteLine("Результат умножения матриц");
+    PrintMatrix(matrixMultiplay);
 }
 else Console.WriteLine("Ошибка! Размеры матриц не подходят для умножения.");
+
+
+
 
 
 bool CheckMatrix(int[,] array1, int[,] array2)// проверка условия возможности умножить матрицы ---------
@@ -51,12 +53,10 @@ int[,] MatrixMultiplay(int[,] array1, int[,] array2) // умножение ма�
     {
         for (int i = 0; i < row1; i++)
         {
-            int sum = 0;
             for (int k = 0; k < col1; k++)
             {
-                sum += array1[i, k] * array2[k, j];
+                res[i, j] += array1[i, k] * array2[k, j];
             }
-            res[i, j] = sum;
         }
     }
     return res;
