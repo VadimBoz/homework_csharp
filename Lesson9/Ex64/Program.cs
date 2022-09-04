@@ -13,7 +13,7 @@ NumbersRow(number);
 void NumbersRow(int num)
 {
     if (num == 0) return;
-    if (num ==1) Console.Write($"{num} ");
+    else if (num ==1) Console.Write($"{num} ");
     else Console.Write($"{num}, ");
     NumbersRow(num - 1);
 }

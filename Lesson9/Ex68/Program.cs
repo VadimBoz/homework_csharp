@@ -9,7 +9,7 @@ int number1 = Convert.ToInt32(Console.ReadLine());
 Console.Write("Введите число n: ");
 int number2 = Convert.ToInt32(Console.ReadLine());
 int res = Akkerman(number1, number2);
-Console.WriteLine($"Результат функции  Аккермана: {res}");
+Console.WriteLine($"Результат функции Аккермана: {res}");
 
 int Akkerman(int m, int n)
 {
